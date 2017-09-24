@@ -64,6 +64,7 @@ def play_local_video():
 
 # Gets yesterdays top YouTube trending YouTube video.  
 # We could use this to dump all the videos to a file for later use  
+# THIS DOESN"T WORK ANYMORE - NEED TO TRANSITION TO API!!!
 def play_top_video():
     # Sets date to two days ago since I'm not sure how soon the previous days videos are available
     dates = (datetime.date.today() - datetime.timedelta(2)).strftime("%Y%m%d")
@@ -126,6 +127,8 @@ def play_video(url, duration):
 alarm = process_time_from_user(results.wake_time.replace(":", "").replace(" ", "")) # Clean up input so it is easier to work with
 video_type = results.video_type.lower()
 
+if "JOHN" in video_type:
+    print("DELETE THIS. THIS IS PRACTICE.")
 
 while True:
     current_time = time.strftime("%H%M")
